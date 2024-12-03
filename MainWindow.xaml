@@ -1,0 +1,141 @@
+﻿<Window x:Class="JPWP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JPWP"
+        mc:Ignorable="d"
+        Title="EcoRescue: Environmental Crisis Manager" Height="1024" Width="1080">
+    <Grid>
+          
+    <Grid Name="Menu" Visibility="Visible">
+        <TextBlock Text="EcoRescue: Environmental Crisis Manager"
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   Margin="0,30,0,0"
+                   Foreground="Black" />
+
+        <!-- Przycisk "Nowa Gra" -->
+        <Border   Background="Gray" CornerRadius="10" Padding="50" HorizontalAlignment="Center" VerticalAlignment="Center"   Name="MainMenu" >
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Nowa Gra"
+                        Width="200" Height="50"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Margin="0,0,0,25"
+                        Click="NewGameButton_Click"/>
+                <Button Content="Wczytaj Grę"
+                Width="200" Height="50"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Margin="0,0,0,25"
+                Click="LoadGameButton_Click"/>
+
+        <!-- Przycisk "Opcje" -->
+        <Button Content="Opcje"
+                Width="200" Height="50"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Margin="0,0,0,25"
+                Click="OptionsButton_Click"/>
+
+        <!-- Przycisk "Wyjdź" -->
+        <Button Content="Wyjdź"
+                Width="200" Height="50"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Margin="0,0,0,0"
+                Click="ExitButton_Click"/>
+                </StackPanel>
+        </Border>
+        
+        <Border   Background="Gray" CornerRadius="10" Padding="20,0,20,20" HorizontalAlignment="Center" VerticalAlignment="Center" Name="LoadGame"  Visibility="Hidden">
+                <StackPanel>
+                        <TextBlock Text="Select Level:"
+                                   FontSize="24" 
+                                   FontWeight="Bold" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Top" 
+                                   Margin="0,10,0,10"
+                                   Foreground="Black" />
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        
+                        <Button Content="Level 1"
+                                Width="200" Height="50"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                                Margin="0,0,0,25"
+                                Tag="0"
+                                Click="LoadLevelButton_Pressed"/>
+                        <Button Content="Level 2"
+                                Width="200" Height="50"
+                                HorizontalAlignment="Center" 
+                                IsEnabled="False"
+                                VerticalAlignment="Center"
+                                Margin="0,0,0,25"
+                                Tag="1"
+                                Click="LoadLevelButton_Pressed"/>
+                        
+                        <Button Content="Level 3"
+                                Width="200" Height="50"
+                                HorizontalAlignment="Center" 
+                                IsEnabled="False"
+                                VerticalAlignment="Center"
+                                Margin="0,0,0,25"
+                                Tag="2"
+                                Click="LoadLevelButton_Pressed"/>
+
+                        <!-- Przycisk "Wyjdź" -->
+                        <Button Content="Level 4"
+                                Width="200" Height="50"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                                IsEnabled="False"
+                                Margin="0,0,0,25"
+                                Tag="3"
+                                Click="LoadLevelButton_Pressed"/>
+                        <Button Content="Level 5"
+                                Width="200" Height="50"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                                IsEnabled="False"
+                                Margin="0,0,0,25"
+                                Tag="4"
+                                Click="LoadLevelButton_Pressed"/>
+                        <Button Content="Return"
+                                Width="200" Height="50"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                                Margin="0,0,0,25"
+                                Click="Return_Pressed"/>
+                </StackPanel>
+                </StackPanel>
+        </Border>
+         <Border   Background="Gray" CornerRadius="10" Padding="20,0,20,20" HorizontalAlignment="Center" VerticalAlignment="Center" Name="Option" Width="600" Height="300" Visibility="Hidden"  >
+                <StackPanel>
+                        <TextBlock Text="Options:"
+                                   FontSize="24" 
+                                   FontWeight="Bold" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Top" 
+                                   Margin="0,10,0,10"
+                                   Foreground="Black" />
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                  
+                        <Button Content="Return"
+                                Width="200" Height="50"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                                Margin="0,175,0,25"
+                                Click="Return_Pressed"/>
+                </StackPanel>
+                </StackPanel>
+        </Border>
+    </Grid> 
+            <Grid Name="Game" Visibility="Visible">
+                    
+            </Grid>
+    </Grid>    
+</Window>
