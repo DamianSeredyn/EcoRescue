@@ -18,3 +18,4 @@ C:\Users\Damian\Desktop\Projekty\JPWP\obj\Debug\net9.0-windows\refint\JPWP.dll
 C:\Users\Damian\Desktop\Projekty\JPWP\obj\Debug\net9.0-windows\JPWP.pdb
 C:\Users\Damian\Desktop\Projekty\JPWP\obj\Debug\net9.0-windows\JPWP.genruntimeconfig.cache
 C:\Users\Damian\Desktop\Projekty\JPWP\obj\Debug\net9.0-windows\ref\JPWP.dll
+C:\Users\Damian\Desktop\Projekty\JPWP\obj\Debug\net9.0-windows\JPWP.sourcelink.json

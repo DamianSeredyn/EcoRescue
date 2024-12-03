@@ -8,7 +8,7 @@
         Title="EcoRescue: Environmental Crisis Manager" Height="1024" Width="1080">
     <Grid>
           
-    <Grid Name="Menu" Visibility="Visible">
+    <Grid Name="Menu" Visibility="Hidden">
         <TextBlock Text="EcoRescue: Environmental Crisis Manager"
                    FontSize="24" 
                    FontWeight="Bold" 
@@ -134,8 +134,25 @@
                 </StackPanel>
         </Border>
     </Grid> 
-            <Grid Name="Game" Visibility="Visible">
-                    
+            <Grid Name="Game" Visibility="Visible" >
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"  Orientation="Horizontal">
+                            <Border   Background="Gray" CornerRadius="10" Height="125" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"   Name="TopBar" >
+                            </Border>
+                            <Button Content="Mini menu"
+                                    Width="125" Height="125"
+                                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Margin="135,5,0,5"
+                                    Click="NewGameButton_Click"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom"  Orientation="Horizontal">
+                            <Border   Background="Gray" CornerRadius="10" Height="125" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"   Name="BottomBar" >
+                            </Border>
+                            <Button Content="Action Menu"
+                                    Width="125" Height="125"
+                                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Margin="135,0,5,5"
+                                    Click="NewGameButton_Click"/>
+                    </StackPanel>
             </Grid>
     </Grid>    
 </Window>

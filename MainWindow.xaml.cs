@@ -23,7 +23,7 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-    public void PrepereUIForNewLevel(Level level)
+    public void PrepereUIForNewLevel(Level? level)
     {
         Game.Visibility = Visibility.Visible;
     }
@@ -79,7 +79,7 @@ public partial class MainWindow : Window
 
     private void SendInfoToLoadLevel(int id)
     {
-        MainMenu.Visibility = Visibility.Hidden;
+        Menu.Visibility = Visibility.Hidden;
         _mainApp.LoadGame(id);
     }
 }
