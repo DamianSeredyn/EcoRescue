@@ -4,17 +4,13 @@ namespace JPWP;
 
 public class GameManager(App mainApp)
 {
+    private bool _gameFrozen;
     private int _currentLevel;
     private int _timeLeft;
     
     private DispatcherTimer? _timer;
-
-    public void StartGame(int levelID)
-    {
-        _currentLevel = levelID;
-        InitTimer();
-    }
-
+    
+    
     private void InitTimer()
     {
         _timeLeft = mainApp.Levels![_currentLevel].Time;
@@ -29,6 +25,8 @@ public class GameManager(App mainApp)
     }
     private void Timer_Tick(object? sender, EventArgs e)
     {
+        if(_gameFrozen) return;
+        
         if (_timeLeft > 0)
         {
             _timeLeft--;
@@ -36,8 +34,36 @@ public class GameManager(App mainApp)
         }
         else
         {
-            _timer?.Stop();
-            // Time out!
+            StopTimer();
+            mainApp.PlayerLose();
         }
+    }
+
+    private void StopTimer()
+    {
+        if (_timer != null)
+        {
+            _timer.Stop();
+            _timer.Tick -= Timer_Tick;
+        }
+
+        _timer = null;
+    }
+
+    public void StartGame(int levelId)
+    {
+        StopTimer();
+        _gameFrozen = false;
+        _currentLevel = levelId;
+        InitTimer();
+    }
+    public void ResetGame()
+    {
+        StartGame(_currentLevel);
+    }
+
+    public void SetGameState(bool val)
+    {
+        _gameFrozen = val;
     }
 }

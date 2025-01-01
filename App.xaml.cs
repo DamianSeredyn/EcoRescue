@@ -72,8 +72,20 @@ public partial class App : Application
     }
     public void LoadGame(int levelId)
     {
+        _mainWindow.DisableAllGameWindows();
         _mainWindow.PrepereUIForNewLevel(Levels?[levelId]);
        _gameManager.StartGame(levelId);
+    }
+
+    public void ResetCurrentLevel()
+    {
+        _mainWindow.DisableAllGameWindows();
+        _gameManager.ResetGame();
+    }
+
+    public void HandleMiniMenu(bool val)
+    {
+        _gameManager.SetGameState(val);
     }
     public void UpdateCountdownText(int time)
     {
@@ -81,5 +93,11 @@ public partial class App : Application
         int seconds = time % 60; 
         var timeText = $"{minutes:D2}:{seconds:D2}";
         _mainWindow.SetTimerText(timeText);
+    }
+
+    public void PlayerLose()
+    {
+        _mainWindow.DisableAllGameWindows();
+        _mainWindow.EnableGameOverScreen();
     }
 }

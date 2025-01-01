@@ -25,12 +25,33 @@ public partial class MainWindow : Window
 
     public void PrepereUIForNewLevel(Level? level)
     {
+        Menu.Visibility = Visibility.Hidden;
         Game.Visibility = Visibility.Visible;
     }
-
+    
     public void SetTimerText(string text)
     {
         TimerText.Text = text;
+    }
+
+    public void EnableGameOverScreen()
+    {
+        GameOverPanel.Visibility = Visibility.Visible;
+    }
+
+    public void DisableAllGameWindows()
+    {
+        GameOverPanel.Visibility = Visibility.Hidden;
+        MiniMenu.Visibility = Visibility.Hidden;
+    }
+    private void ExitToMenuEvent(object sender, RoutedEventArgs e)
+    {
+        Menu.Visibility = Visibility.Visible;
+        Game.Visibility = Visibility.Hidden;
+    }
+    private void ResetGameEvent(object sender, RoutedEventArgs e)
+    {
+        _mainApp.ResetCurrentLevel();
     }
     private void NewGameButton_Click(object sender, RoutedEventArgs e)
     {
@@ -52,6 +73,22 @@ public partial class MainWindow : Window
     private void ExitButton_Click(object sender, RoutedEventArgs e)
     {
         Close();
+    }
+    
+    private void ContinueButtonEvent(object sender, RoutedEventArgs e)
+    {
+        MiniMenu.Visibility = Visibility.Hidden;
+        _mainApp.HandleMiniMenu(false);
+    }
+    private void OptionsButtonMiniMenuEvent(object sender, RoutedEventArgs e)
+    {
+
+    }
+   
+    private void MiniMenuEvent(object sender, RoutedEventArgs e)
+    {
+        MiniMenu.Visibility = Visibility.Visible;
+        _mainApp.HandleMiniMenu(true);
     }
     
     private void LoadLevelButton_Pressed(object sender, RoutedEventArgs e)
