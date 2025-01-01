@@ -1,0 +1,21 @@
+[
+    {
+      "Id": 1,
+      "Name": "Level 1",
+      "Time": 320,
+      "Parameters": [1, 2, 3]
+    },
+    {
+      "Id": 2,
+      "Name": "Level 2",
+      "Time": 320,
+      "Parameters": [1, 2, 3]
+    },
+    {
+      "Id": 3,
+      "Name": "Level 3",
+      "Time": 320,
+      "Parameters": [1, 2, 3]
+    }
+  
+]

@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JPWP"
         mc:Ignorable="d"
-        Title="EcoRescue: Environmental Crisis Manager" Height="1024" Width="1080">
-    <Grid>
+        Title="EcoRescue: Environmental Crisis Manager" Height="1024" Width="1080"
+        ResizeMode="NoResize">
+        
+        <Grid>
           
-    <Grid Name="Menu" Visibility="Hidden">
+    <Grid Name="Menu" Visibility="Visible">
         <TextBlock Text="EcoRescue: Environmental Crisis Manager"
                    FontSize="24" 
                    FontWeight="Bold" 
@@ -134,9 +136,26 @@
                 </StackPanel>
         </Border>
     </Grid> 
-            <Grid Name="Game" Visibility="Visible" >
+            <Grid Name="Game" Visibility="Hidden" >
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"  Orientation="Horizontal">
                             <Border   Background="Gray" CornerRadius="10" Height="125" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"   Name="TopBar" >
+                                    <Grid>
+
+                                            <Border Background="LightGray" CornerRadius="10" Padding="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                            <!-- Ikona timera -->
+                                                            <Image Source="Resources\timer.png" Width="32" Height="32" Margin="0,0,5,0"/>
+                
+                                                            <!-- Tekst czasu -->
+                                                            <TextBlock Name="TimerText"
+                                                                       Text="00:00"
+                                                                       FontSize="24"
+                                                                       FontWeight="Bold"
+                                                                       Foreground="Black"
+                                                                       VerticalAlignment="Center" />
+                                                    </StackPanel>
+                                            </Border>       
+                                    </Grid>
                             </Border>
                             <Button Content="Mini menu"
                                     Width="125" Height="125"

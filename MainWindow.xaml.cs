@@ -27,6 +27,11 @@ public partial class MainWindow : Window
     {
         Game.Visibility = Visibility.Visible;
     }
+
+    public void SetTimerText(string text)
+    {
+        TimerText.Text = text;
+    }
     private void NewGameButton_Click(object sender, RoutedEventArgs e)
     {
         SendInfoToLoadLevel(0);
