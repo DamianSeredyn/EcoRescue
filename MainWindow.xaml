@@ -10,7 +10,7 @@
         
         <Grid>
           
-    <Grid Name="Menu" Visibility="Visible">
+    <Grid Name="Menu" Visibility="Hidden">
         <TextBlock Text="EcoRescue: Environmental Crisis Manager"
                    FontSize="24" 
                    FontWeight="Bold" 
@@ -136,27 +136,80 @@
                 </StackPanel>
         </Border>
     </Grid> 
-            <Grid Name="Game" Visibility="Hidden" >
+            <Grid Name="Game" Visibility="Visible" >
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"  Orientation="Horizontal">
-                            <Border   Background="Gray" CornerRadius="10" Height="125" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"   Name="TopBar" >
-                                    <Grid>
+<Border Background="Gray" CornerRadius="10" Height="100" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Name="TopBar">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> 
+        </Grid.RowDefinitions>
 
-                                            <Border Background="LightGray" CornerRadius="10" Padding="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
-                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                            <!-- Ikona timera -->
-                                                            <Image Source="Resources\timer.png" Width="32" Height="32" Margin="0,0,5,0"/>
-                
-                                                            <!-- Tekst czasu -->
-                                                            <TextBlock Name="TimerText"
-                                                                       Text="00:00"
-                                                                       FontSize="24"
-                                                                       FontWeight="Bold"
-                                                                       Foreground="Black"
-                                                                       VerticalAlignment="Center" />
-                                                    </StackPanel>
-                                            </Border>       
-                                    </Grid>
-                            </Border>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/> 
+            <ColumnDefinition Width="Auto"/> 
+            
+        </Grid.ColumnDefinitions>
+        <Border Background="LightGray" CornerRadius="10" Padding="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="80,25,25,0" Grid.Row="0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Image Source="Resources\timer.png" Width="32" Height="32" Margin="0,0,5,0"/>
+                <TextBlock Name="TimerText"
+                           Text="00:00"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           VerticalAlignment="Center" />
+            </StackPanel>
+        </Border>
+        
+        <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,25,0,0" >
+                <Image Source="Resources/money.png" Width="50" Height="50" Margin="0,0,0,5"/>
+                <StackPanel Margin="25,0,0,0">
+                    <TextBlock Text="1000" FontSize="16" Name="Res1" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock Text="+0" FontSize="16" Name="PredictedRevenueText1" FontWeight="Bold" Foreground="Chartreuse"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Zasób 2 -->
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0">
+                <Image Source="Resources/workers.png" Width="50" Height="50" Margin="0,0,0,5"/>
+                <StackPanel Margin="25,0,0,0">
+                    <TextBlock Text="1000" FontSize="16" Name="Res2" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock Text="+0" FontSize="16" Name="PredictedRevenueText2" FontWeight="Bold" Foreground="Chartreuse"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Zasób 3 -->
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0">
+                <Image Source="Resources/Materials.png" Width="50" Height="50" Margin="0,0,0,5"/>
+                <StackPanel Margin="25,0,0,0">
+                    <TextBlock Text="1000" FontSize="16" Name="Res3" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock Text="+0" FontSize="16" Name="PredictedRevenueText3" FontWeight="Bold" Foreground="Chartreuse"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Zasób 4 -->
+            <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0">
+                <Image Source="Resources/research.png" Width="50" Height="50" Margin="0,0,0,5"/>
+                <StackPanel Margin="25,0,0,0">
+                    <TextBlock Text="1000" FontSize="16" Name="Res4" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock Text="+0" FontSize="16" Name="PredictedRevenueText4" FontWeight="Bold" Foreground="Chartreuse"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Border>
                             <Button Content="Mini menu"
                                     Width="125" Height="125"
                                     HorizontalAlignment="Left" VerticalAlignment="Top"
@@ -221,12 +274,53 @@
                             </StackPanel>
                     </Border>
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom"  Orientation="Horizontal">
-                            <Border   Background="Gray" CornerRadius="10" Height="125" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"   Name="BottomBar" >
+                            <Border    CornerRadius="10" Height="125" Width="900" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"   Name="BottomBar" >
+                                        <Border.Background>
+                                                <ImageBrush ImageSource="Resources/Panels/paper_panel_681_x_150.png" Stretch=" Fill"/>
+                                        </Border.Background>
+                                    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+                                            
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="10">
+            <Image Source="Resources/Happiness.png" Width="40" Height="40" Margin="15,0,10,0"/>
+            <Slider x:Name="Slider1" Minimum="0" Maximum="100" Value="50" IsEnabled="False" Width="150" Margin="0,12,10,0"/>
+            <TextBlock x:Name="Slider1Text" Text="50%" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" />
+        </StackPanel>
+                                            
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="10">
+            <Image Source="Resources/airPollution.png" Width="40" Height="40" Margin="0,0,10,0"/>
+            <Slider x:Name="Slider2" Minimum="0" Maximum="100" Value="75" IsEnabled="False" Width="150" Margin="0,12,10,0"/>
+            <TextBlock x:Name="Slider2Text" Text="75%" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" Margin="10">
+            <Image Source="Resources/WaterPollution.png" Width="40" Height="40" Margin="0,0,10,0"/>
+            <Slider x:Name="Slider3" Minimum="0" Maximum="100" Value="30" IsEnabled="False" Width="150" Margin="0,12,10,0"/>
+            <TextBlock x:Name="Slider3Text" Text="30%" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="10">
+            <Image Source="Resources/temperature.png" Width="40" Height="40" Margin="15,0,10,0"/>
+            <Slider x:Name="Slider4" Minimum="0" Maximum="100" Value="90" IsEnabled="False" Width="150" Margin="0,12,10,0"/>
+            <TextBlock x:Name="Slider4Text" Text="90%" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="10">
+            <Image Source="Resources/biodiversity.png" Width="40" Height="40" Margin="0,0,10,0"/>
+            <Slider x:Name="Slider5" Minimum="0" Maximum="100" Value="10" IsEnabled="False" Width="150" Margin="0,12,10,0"/>
+            <TextBlock x:Name="Slider5Text" Text="10%" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" />
+        </StackPanel>
+    </Grid>
                             </Border>
                             <Button Content="Action Menu"
                                     Width="125" Height="125"
                                     HorizontalAlignment="Left" VerticalAlignment="Top"
-                                    Margin="135,0,5,5"
+                                    Margin="35,0,5,5"
                                     Click="NewGameButton_Click"/>
                     </StackPanel>
             </Grid>

@@ -60,6 +60,7 @@ public partial class App : Application
             {
                 foreach (var level in Levels)
                 {
+                    Debug.Assert(level.Parameters != null, "level.Parameters != null");
                     Console.WriteLine($"Name: {level.Name}, Time: {level.Time}, Parameters: {string.Join(", ", level.Parameters)}");
                 }
             }
@@ -99,5 +100,10 @@ public partial class App : Application
     {
         _mainWindow.DisableAllGameWindows();
         _mainWindow.EnableGameOverScreen();
+    }
+
+    public void RefreshParameters(int[]? val)
+    {
+        _mainWindow.RefreshSliders(val);
     }
 }

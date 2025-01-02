@@ -34,6 +34,21 @@ public partial class MainWindow : Window
         TimerText.Text = text;
     }
 
+    public void RefreshSliders(int[]? val)
+    {
+        if(val == null) return;
+        Slider1.Value = val[0];
+        Slider2.Value = val[1];
+        Slider3.Value = val[2];
+        Slider4.Value = val[3];
+        Slider5.Value = val[4];
+
+        Slider1Text.Text = val[0].ToString() + "%";
+        Slider2Text.Text = val[1].ToString() + "%";
+        Slider3Text.Text = val[2].ToString() + "%";
+        Slider4Text.Text = val[3].ToString();
+        Slider5Text.Text = val[4].ToString() + "%";
+    }
     public void EnableGameOverScreen()
     {
         GameOverPanel.Visibility = Visibility.Visible;

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Windows.Threading;
 
 namespace JPWP;
@@ -10,6 +11,7 @@ public class GameManager(App mainApp)
     
     private DispatcherTimer? _timer;
     
+    private int[]? _currentParameters;
     
     private void InitTimer()
     {
@@ -29,16 +31,24 @@ public class GameManager(App mainApp)
         
         if (_timeLeft > 0)
         {
+            CheckParameters();
+            mainApp.RefreshParameters(_currentParameters);
             _timeLeft--;
             mainApp.UpdateCountdownText(_timeLeft);
         }
         else
         {
-            StopTimer();
-            mainApp.PlayerLose();
+            GameLost();
         }
     }
 
+    private void GameLost()
+    {
+        _gameFrozen = true;
+        StopTimer();
+        _timeLeft = 0;
+        mainApp.PlayerLose();
+    }
     private void StopTimer()
     {
         if (_timer != null)
@@ -50,11 +60,27 @@ public class GameManager(App mainApp)
         _timer = null;
     }
 
+    private void SetUpParameters()
+    {
+        _currentParameters = mainApp.Levels![_currentLevel].Parameters;
+        mainApp.RefreshParameters(_currentParameters);
+    }
+
+    private void CheckParameters()
+    {
+        Debug.Assert(_currentParameters != null, nameof(_currentParameters) + " != null");
+        foreach (var parameter in _currentParameters)
+        {
+            if(parameter>=100)
+                GameLost();
+        }
+    }
     public void StartGame(int levelId)
     {
         StopTimer();
         _gameFrozen = false;
         _currentLevel = levelId;
+        SetUpParameters();
         InitTimer();
     }
     public void ResetGame()

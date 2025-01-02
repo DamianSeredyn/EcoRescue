@@ -3,19 +3,19 @@
       "Id": 1,
       "Name": "Level 1",
       "Time": 15,
-      "Parameters": [1, 2, 3]
+      "Parameters": [40, 75, 15,60,33]
     },
     {
       "Id": 2,
       "Name": "Level 2",
       "Time": 15,
-      "Parameters": [1, 2, 3]
+      "Parameters": [40, 75, 15,60,33]
     },
     {
       "Id": 3,
       "Name": "Level 3",
       "Time": 15,
-      "Parameters": [1, 2, 3]
+      "Parameters": [40, 75, 15,60,33]
     }
   
 ]

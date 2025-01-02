@@ -16,8 +16,116 @@
 
     <ItemGroup>
       <None Remove="Resources\timer.png" />
+      <Resource Include="Resources\Panels\paper_panel_681_x_150.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
       <Resource Include="Resources\timer.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\airPollution.png" />
+      <Resource Include="Resources\airPollution.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\biodiversity.png" />
+      <Resource Include="Resources\biodiversity.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Happiness.png" />
+      <Resource Include="Resources\Happiness.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\temperature.png" />
+      <Resource Include="Resources\temperature.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\WaterPollution.png" />
+      <Resource Include="Resources\WaterPollution.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\paper_panel_681_x_150.png" />
+      <None Remove="Resources\Panels\paper_panel_242_x_240.png" />
+      <Resource Include="Resources\Panels\paper_panel_242_x_240.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_242_x_240b.png" />
+      <Resource Include="Resources\Panels\paper_panel_242_x_240b.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_355_x_1244.png" />
+      <Resource Include="Resources\Panels\paper_panel_355_x_1244.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_360_x_150.png" />
+      <Resource Include="Resources\Panels\paper_panel_360_x_150.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_360_x_240.png" />
+      <Resource Include="Resources\Panels\paper_panel_360_x_240.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_360_x_340.png" />
+      <Resource Include="Resources\Panels\paper_panel_360_x_340.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_360_x_392.png" />
+      <Resource Include="Resources\Panels\paper_panel_360_x_392.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_601_x_478.png" />
+      <Resource Include="Resources\Panels\paper_panel_601_x_478.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_617_x_342.png" />
+      <Resource Include="Resources\Panels\paper_panel_617_x_342.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_1057_x_1067.png" />
+      <Resource Include="Resources\Panels\paper_panel_1057_x_1067.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_1286_x_819.png" />
+      <Resource Include="Resources\Panels\paper_panel_1286_x_819.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_1307_x_181.png" />
+      <Resource Include="Resources\Panels\paper_panel_1307_x_181.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_1611_x_174.png" />
+      <Resource Include="Resources\Panels\paper_panel_1611_x_174.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_1899_x_1067.png" />
+      <Resource Include="Resources\Panels\paper_panel_1899_x_1067.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_2023_x_1522.png" />
+      <Resource Include="Resources\Panels\paper_panel_2023_x_1522.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_2197_x_1233.png" />
+      <Resource Include="Resources\Panels\paper_panel_2197_x_1233.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Panels\paper_panel_2200_x_181.png" />
+      <Resource Include="Resources\Panels\paper_panel_2200_x_181.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Materials.png" />
+      <Resource Include="Resources\Materials.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\money.png" />
+      <Resource Include="Resources\money.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\workers.png" />
+      <Resource Include="Resources\workers.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\research.png" />
+      <Resource Include="Resources\research.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>
 
