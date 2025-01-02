@@ -2,20 +2,26 @@
     {
       "Id": 1,
       "Name": "Level 1",
-      "Time": 320,
-      "Parameters": [1, 2, 3]
+      "Time": 150,
+      "Parameters": [40, 75, 15,60,33],
+      "Resources": [1000,250,600,150],
+      "StartIncome": [150,250,350,450]
     },
     {
       "Id": 2,
       "Name": "Level 2",
-      "Time": 320,
-      "Parameters": [1, 2, 3]
+      "Time": 15,
+      "Parameters": [40, 75, 15,60,33],
+      "Resources": [1000,250,600,150],
+      "StartIncome": [150,250,350,450]
     },
     {
       "Id": 3,
       "Name": "Level 3",
-      "Time": 320,
-      "Parameters": [1, 2, 3]
+      "Time": 15,
+      "Parameters": [40, 75, 15,60,33],
+      "Resources": [1000,250,600,150],
+      "StartIncome": [150,250,350,450]
     }
   
 ]

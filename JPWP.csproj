@@ -10,7 +10,7 @@
 
     <ItemGroup>
       <None Update="Data\levels.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>
 
@@ -126,6 +126,21 @@
       <None Remove="Resources\research.png" />
       <Resource Include="Resources\research.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\mini_menu_icon.png" />
+      <Resource Include="Resources\mini_menu_icon.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Maps\level1.jpg" />
+      <None Remove="Resources\Maps\level1.png" />
+      <Resource Include="Resources\Maps\level1.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Resources\Maps\level1.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>
 

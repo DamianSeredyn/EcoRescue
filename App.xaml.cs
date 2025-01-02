@@ -106,4 +106,12 @@ public partial class App : Application
     {
         _mainWindow.RefreshSliders(val);
     }
+    public void RefreshResources(int[]? val)
+    {
+        _mainWindow.RefreshRes(val);
+    } 
+    public void RefreshIncome(int[]? val)
+    {
+        _mainWindow.RefreshIncome(val);
+    } 
 }

@@ -137,8 +137,14 @@
         </Border>
     </Grid> 
             <Grid Name="Game" Visibility="Visible" >
-                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"  Orientation="Horizontal">
-<Border Background="Gray" CornerRadius="10" Height="100" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Name="TopBar">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Resources/Maps/level1.jpg" Stretch="Fill"/>
+                </Grid.Background>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"  Orientation="Horizontal">
+<Border CornerRadius="10" Height="100" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Name="TopBar">
+    <Border.Background>
+        <ImageBrush ImageSource="Resources/Panels/paper_panel_681_x_150.png" Stretch=" Fill"/>
+    </Border.Background>
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/> 
@@ -149,7 +155,7 @@
             <ColumnDefinition Width="Auto"/> 
             
         </Grid.ColumnDefinitions>
-        <Border Background="LightGray" CornerRadius="10" Padding="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="80,25,25,0" Grid.Row="0" Grid.Column="1">
+        <Border Background="#d1bf94" BorderBrush="Black" BorderThickness="4" CornerRadius="10" Padding="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="65,20,25,0" Grid.Row="0" Grid.Column="1">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Image Source="Resources\timer.png" Width="32" Height="32" Margin="0,0,5,0"/>
                 <TextBlock Name="TimerText"
@@ -173,48 +179,54 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,25,0,0" >
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,25,0,0" MaxWidth="115" >
                 <Image Source="Resources/money.png" Width="50" Height="50" Margin="0,0,0,5"/>
-                <StackPanel Margin="25,0,0,0">
+                <StackPanel Margin="20,0,0,0">
                     <TextBlock Text="1000" FontSize="16" Name="Res1" FontWeight="Bold" Foreground="Black"/>
-                    <TextBlock Text="+0" FontSize="16" Name="PredictedRevenueText1" FontWeight="Bold" Foreground="Chartreuse"/>
+                    <TextBlock Text="+0" FontSize="14" Name="PredictedRevenueText1" FontWeight="Bold" Foreground="Chartreuse"/>
                 </StackPanel>
             </StackPanel>
 
             <!-- Zasób 2 -->
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0">
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0"  MaxWidth="115">
                 <Image Source="Resources/workers.png" Width="50" Height="50" Margin="0,0,0,5"/>
-                <StackPanel Margin="25,0,0,0">
+                <StackPanel Margin="20,0,0,0">
                     <TextBlock Text="1000" FontSize="16" Name="Res2" FontWeight="Bold" Foreground="Black"/>
-                    <TextBlock Text="+0" FontSize="16" Name="PredictedRevenueText2" FontWeight="Bold" Foreground="Chartreuse"/>
+                    <TextBlock Text="+0" FontSize="14" Name="PredictedRevenueText2" FontWeight="Bold" Foreground="Chartreuse"/>
                 </StackPanel>
             </StackPanel>
 
             <!-- Zasób 3 -->
-            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0">
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0"  MaxWidth="115">
                 <Image Source="Resources/Materials.png" Width="50" Height="50" Margin="0,0,0,5"/>
-                <StackPanel Margin="25,0,0,0">
+                <StackPanel Margin="20,0,0,0">
                     <TextBlock Text="1000" FontSize="16" Name="Res3" FontWeight="Bold" Foreground="Black"/>
-                    <TextBlock Text="+0" FontSize="16" Name="PredictedRevenueText3" FontWeight="Bold" Foreground="Chartreuse"/>
+                    <TextBlock Text="+0" FontSize="14" Name="PredictedRevenueText3" FontWeight="Bold" Foreground="Chartreuse"/>
                 </StackPanel>
             </StackPanel>
 
             <!-- Zasób 4 -->
-            <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0">
+            <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,25,0,0"  MaxWidth="115">
                 <Image Source="Resources/research.png" Width="50" Height="50" Margin="0,0,0,5"/>
-                <StackPanel Margin="25,0,0,0">
+                <StackPanel Margin="20,0,0,0">
                     <TextBlock Text="1000" FontSize="16" Name="Res4" FontWeight="Bold" Foreground="Black"/>
-                    <TextBlock Text="+0" FontSize="16" Name="PredictedRevenueText4" FontWeight="Bold" Foreground="Chartreuse"/>
+                    <TextBlock Text="+0" FontSize="14" Name="PredictedRevenueText4" FontWeight="Bold" Foreground="Chartreuse"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>
 </Border>
-                            <Button Content="Mini menu"
+                            <Button 
+                                    Background="#f0e4c4" BorderBrush="Black" BorderThickness="4" 
                                     Width="125" Height="125"
                                     HorizontalAlignment="Left" VerticalAlignment="Top"
                                     Margin="135,5,0,5"
-                                    Click="MiniMenuEvent"/>
+                                    Click="MiniMenuEvent">
+                                <Button.Content>
+                                    <Image Source="Resources/mini_menu_icon.png" Width="90" Height="90"/>
+                                </Button.Content>
+                                </Button>
+                           
                     </StackPanel>
                     <Border Name="GameOverPanel" Background="LightGray" CornerRadius="10" Visibility="Collapsed"
                             HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="200">
@@ -320,7 +332,7 @@
                             <Button Content="Action Menu"
                                     Width="125" Height="125"
                                     HorizontalAlignment="Left" VerticalAlignment="Top"
-                                    Margin="35,0,5,5"
+                                    Margin="35,0,5,5" Background="#f0e4c4" BorderBrush="Black" BorderThickness="4" 
                                     Click="NewGameButton_Click"/>
                     </StackPanel>
             </Grid>

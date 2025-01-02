@@ -49,6 +49,34 @@ public partial class MainWindow : Window
         Slider4Text.Text = val[3].ToString();
         Slider5Text.Text = val[4].ToString() + "%";
     }
+    
+    public void RefreshRes(int[]? val)
+    {
+        if(val == null) return;
+        Res1.Text = val[0].ToString();
+        Res2.Text = val[1].ToString();
+        Res3.Text = val[2].ToString();
+        Res4.Text = val[3].ToString();
+    }
+
+    public void RefreshIncome(int[]? val)
+    {
+        List<TextBlock> textBlocks = [PredictedRevenueText1, PredictedRevenueText2, PredictedRevenueText3, PredictedRevenueText4];
+        if(val == null) return;
+        for (var index = 0; index < textBlocks.Count; index++)
+        {
+            if (val[index] >= 0)
+            {
+                textBlocks[index].Text = "+" +val[index].ToString();
+                textBlocks[index].Foreground = Brushes.Green;       
+            }
+            else
+            {
+                textBlocks[index].Text = val[index].ToString();
+                textBlocks[index].Foreground = Brushes.Red;
+            }
+        }
+    }
     public void EnableGameOverScreen()
     {
         GameOverPanel.Visibility = Visibility.Visible;

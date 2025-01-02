@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JPWP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+418d91c8d8388b0f327017de7348288e4ccf2bbc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6a763683a1d988d7e7a1b6188fc3a25332d84df")]
 [assembly: System.Reflection.AssemblyProductAttribute("JPWP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JPWP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
