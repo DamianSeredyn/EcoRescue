@@ -5,7 +5,8 @@
       "Time": 150,
       "Parameters": [40, 75, 15,60,33],
       "Resources": [1000,250,600,150],
-      "StartIncome": [150,250,350,450]
+      "StartIncome": [150,250,350,450],
+      "Actions": [1]
     },
     {
       "Id": 2,
@@ -13,7 +14,8 @@
       "Time": 15,
       "Parameters": [40, 75, 15,60,33],
       "Resources": [1000,250,600,150],
-      "StartIncome": [150,250,350,450]
+      "StartIncome": [150,250,350,450],
+      "Actions": [0,1,2]
     },
     {
       "Id": 3,
@@ -21,7 +23,8 @@
       "Time": 15,
       "Parameters": [40, 75, 15,60,33],
       "Resources": [1000,250,600,150],
-      "StartIncome": [150,250,350,450]
+      "StartIncome": [150,250,350,450],
+      "Actions": [0,1,2]
     }
   
 ]
