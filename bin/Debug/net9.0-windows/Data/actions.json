@@ -204,7 +204,7 @@
     "id": 29,
     "Name": "Zakładanie miejskich ogrodów botanicznych",
     "Costs": [300, 75, 200, 0],
-    "Revenues": [0, 0, 0, 0,0,15,0,0,20],
+    "Revenues": [0, 0, 0, 0,0,-15,0,0,20],
     "Description": "Tworzenie przestrzeni, gdzie gatunki roślin są chronione i pielęgnowane."
   },
   {
