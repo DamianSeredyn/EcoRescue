@@ -94,9 +94,39 @@ public partial class MainWindow
         GameOverPanel.Visibility = Visibility.Hidden;
         MiniMenu.Visibility = Visibility.Hidden;
         ActionMenu.Visibility = Visibility.Hidden;
+        EventDecisionWindow.Visibility = Visibility.Hidden;
     }
-    
 
+    public void CreateEventIcon(int x, int y)
+    {
+        Canvas.Children.Clear();
+        Button button = new Button
+        {
+            Width = 50,
+            Height = 50,
+            Background = Brushes.LightSalmon,
+            BorderBrush = Brushes.Black,
+            BorderThickness = new Thickness(2)
+        };
+
+        Image image = new Image
+        {
+            Source = new BitmapImage(new Uri("pack://application:,,,/Resources/eventIcon.png")),
+            Stretch = Stretch.Uniform
+        };
+        button.Content = image;
+        Canvas.Children.Add(button);
+
+        Canvas.SetLeft(button, x); 
+        Canvas.SetTop(button, y);
+        
+        button.Click += (sender, args) =>
+        {
+            EnableEventWindow();
+            Canvas.Children.Remove(button);
+        };
+
+    }
     private void SetColorAndText(TextBlock textBlock,int val, string text, bool pos)
     {
         if (pos)
@@ -396,6 +426,13 @@ public partial class MainWindow
                 }
     }
         
+    }
+
+    private void EnableEventWindow()
+    {
+        DisableAllGameWindows();
+        EventDecisionWindow.Visibility = Visibility.Visible;
+        _mainApp.GetGameManager().SetGameState(true);
     }
     private void ExitToMenuEvent(object sender, RoutedEventArgs e)
     {

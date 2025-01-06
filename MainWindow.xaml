@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JPWP"
         mc:Ignorable="d"
-        Title="EcoRescue: Environmental Crisis Manager" Height="1024" Width="1080"
+        Title="EcoRescue: Environmental Crisis Manager" Height="1024" Width="1024"
         ResizeMode="NoResize">
         
         <Grid>
@@ -140,6 +140,8 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="Resources/Maps/level1.jpg" Stretch="Fill"/>
                 </Grid.Background>
+                <Canvas Name="Canvas" Width="800" Height="600" Background="Transparent"  >
+                </Canvas>
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"  Orientation="Horizontal">
 <Border CornerRadius="10" Height="100" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Name="TopBar">
     <Border.Background>
@@ -218,12 +220,12 @@
 </Border>
                             <Button 
                                     Background="#f0e4c4" BorderBrush="Black" BorderThickness="4" 
-                                    Width="125" Height="125"
+                                    Width="100" Height="100"
                                     HorizontalAlignment="Left" VerticalAlignment="Top"
-                                    Margin="135,5,0,5"
+                                    Margin="100,5,0,5"
                                     Click="MiniMenuEvent">
                                 <Button.Content>
-                                    <Image Source="Resources/mini_menu_icon.png" Width="90" Height="90"/>
+                                    <Image Source="Resources/mini_menu_icon.png" Width="75" Height="75"/>
                                 </Button.Content>
                                 </Button>
                            
@@ -308,6 +310,53 @@
                                     </StackPanel>
                             </StackPanel>
                     </Border>
+                   <Border Background="#f0e4c4" CornerRadius="10" BorderBrush="Black" BorderThickness="4" Padding="20" Width="400" Height="500" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" Name="EventDecisionWindow">
+        <Grid>
+            <!-- Definicja wierszy -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" /> <!-- Tytuł -->
+                <RowDefinition Height="100" /> <!-- Opis -->
+                <RowDefinition Height="*" />   <!-- Efekty -->
+                <RowDefinition Height="Auto" /> <!-- Przyciski -->
+            </Grid.RowDefinitions>
+
+            <!-- Tytuł wydarzenia -->
+            <TextBlock Text="Tytuł wydarzenia" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10" Grid.Row="0" />
+
+            <!-- Opis wydarzenia -->
+            <TextBlock Text="Opis wydarzenia: To jest przykładowy tekst opisu." TextWrapping="Wrap" Margin="0,0,0,20" Grid.Row="1" />
+
+            <!-- Sekcja efektów -->
+            <Grid Grid.Row="2" Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Efekt 1 -->
+                <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Efekty 1:" FontWeight="Bold" />
+                        <TextBlock Text="Lista efektów dla akcji 1" />
+                    </StackPanel>
+                </Border>
+
+                <!-- Efekt 2 -->
+                <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="10" Grid.Column="1">
+                    <StackPanel>
+                        <TextBlock Text="Efekty 2:" FontWeight="Bold" />
+                        <TextBlock Text="Lista efektów dla akcji 2" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Przyciski na dole -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3">
+                <Button Content="Opcja 1" Width="100" Margin="10,0" />
+                <Button Content="Opcja 2" Width="100" Margin="10,0" />
+            </StackPanel>
+        </Grid>
+    </Border>
                     <Border Background="#f0e4c4" CornerRadius="10" BorderBrush="Black" BorderThickness="2" Padding="20" Width="300" Height="400" Visibility="Hidden" Name="GameWinScreen">
                         <Grid>
                             <!-- Definicje wierszy dla siatki -->
@@ -381,11 +430,12 @@
     </Grid>
                             </Border>
                             <Button Content="Action Menu"
-                                    Width="125" Height="125"
+                                    Width="100" Height="100"
                                     HorizontalAlignment="Left" VerticalAlignment="Top"
-                                    Margin="35,0,5,5" Background="#f0e4c4" BorderBrush="Black" BorderThickness="4" 
+                                    Margin="0,20,5,5" Background="#f0e4c4" BorderBrush="Black" BorderThickness="4" 
                                     Click="ActionMenuEventClick"/>
                     </StackPanel>
             </Grid>
-    </Grid>    
+    </Grid>
+    
 </Window>

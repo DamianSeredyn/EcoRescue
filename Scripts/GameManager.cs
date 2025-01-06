@@ -157,6 +157,15 @@ public class GameManager(App mainApp)
         mainApp.RefreshResources(_currentResources);
         mainApp.RefreshIncome(_currentIncome);  
     }
+
+    private void GenerateEvent()
+    {
+        Random random = new Random();
+        Debug.Assert(mainApp.Levels != null, "mainApp.Levels != null");
+        int randomIndex = random.Next(mainApp.Levels[_currentLevel].EventPositions.Count);
+        List<int> val = mainApp.Levels[_currentLevel].EventPositions[randomIndex];
+        mainApp.GenerateEvent(val[0], val[1]);
+    }
     public void StartGame(int levelId)
     {
         StopTimer();
@@ -167,6 +176,8 @@ public class GameManager(App mainApp)
         SetUpIncome();
         InitAction();
         InitTimer();
+
+        GenerateEvent();
     }
     public void ResetGame()
     {

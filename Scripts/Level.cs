@@ -8,4 +8,5 @@ public class Level
     public int[]? Resources { get; set; }
     public int[]? StartIncome { get; set; }
     public int[]? Actions { get; set; }
+    public List<List<int>> EventPositions { get; set; }
 }

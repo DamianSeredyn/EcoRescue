@@ -38,14 +38,13 @@ public partial class App : Application
         LoadLevels();
         LoadAction();
         _gameManager = new GameManager(this);
-        MessageBox.Show("Witamy w EcoRescue!");
         
         _mainWindow .Show();
     }
 
     private void Application_Exit(object sender, ExitEventArgs e)
     {
-        MessageBox.Show("Do widzenia!");
+
     }
 
     private void LoadLevels()
@@ -147,6 +146,11 @@ public partial class App : Application
     public void GameWon(int time)
     {
         _mainWindow.EnableGameWinScreen(time);
+    }
+
+    public void GenerateEvent(int x, int y)
+    {
+        _mainWindow.CreateEventIcon(x,y);
     }
     public GameManager GetGameManager() => _gameManager;
 }
