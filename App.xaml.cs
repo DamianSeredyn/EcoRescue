@@ -5,6 +5,7 @@ using System.IO;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Threading;
+using Action = JPWP.Scripts.Action;
 
 namespace JPWP;
 
@@ -14,7 +15,7 @@ namespace JPWP;
 public partial class App : Application
 {
     public List<Level>? Levels;
-
+    public List<Action>? AllActions;
     private readonly MainWindow _mainWindow;
     private GameManager _gameManager;
 
@@ -35,6 +36,7 @@ public partial class App : Application
     private void Application_Startup(object sender, StartupEventArgs e)
     {
         LoadLevels();
+        LoadAction();
         _gameManager = new GameManager(this);
         MessageBox.Show("Witamy w EcoRescue!");
         
@@ -54,16 +56,6 @@ public partial class App : Application
         {
             string jsonContent = File.ReadAllText(dataPath);
             Levels = JsonSerializer.Deserialize<List<Level>>(jsonContent);
-
-            // Wyświetl poziomy w konsoli
-            if (Levels != null)
-            {
-                foreach (var level in Levels)
-                {
-                    Debug.Assert(level.Parameters != null, "level.Parameters != null");
-                    Console.WriteLine($"Name: {level.Name}, Time: {level.Time}, Parameters: {string.Join(", ", level.Parameters)}");
-                }
-            }
         }
         else
         {
@@ -71,13 +63,28 @@ public partial class App : Application
         }
 
     }
+
+    private void LoadAction()
+    {
+        AllActions = new List<Action>();
+        string dataPath = "Data/actions.json";
+        if (File.Exists(dataPath))
+        {
+            string jsonContent = File.ReadAllText(dataPath);
+            AllActions = JsonSerializer.Deserialize<List<Action>>(jsonContent);
+        }
+        else
+        {
+            Console.WriteLine("Plik JSON nie został znaleziony.");
+        }
+    }
     public void LoadGame(int levelId)
     {
         _mainWindow.DisableAllGameWindows();
-        _mainWindow.PrepereUIForNewLevel(Levels?[levelId]);
+        _mainWindow.PrepareUiForNewLevel(Levels?[levelId]);
        _gameManager.StartGame(levelId);
     }
-
+    
     public void ResetCurrentLevel()
     {
         _mainWindow.DisableAllGameWindows();
@@ -113,5 +120,33 @@ public partial class App : Application
     public void RefreshIncome(int[]? val)
     {
         _mainWindow.RefreshIncome(val);
-    } 
+    }
+
+    public List<Action>? AssignActions(int[] actionIDs)
+    {
+        List<Action>? actions = new List<Action>();
+        foreach (var actionId in actionIDs)
+        {
+            Debug.Assert(AllActions != null, nameof(AllActions) + " != null");
+            foreach (var action in AllActions)
+            {
+                if (action.Id != actionId) continue;
+                actions.Add(action);
+                break;
+            }
+        }
+
+        return actions;
+    }
+
+    public void RefreshUiAction(List<Action> actions)
+    {
+        _mainWindow.CreateActions(actions);
+    }
+
+    public void GameWon(int time)
+    {
+        _mainWindow.EnableGameWinScreen(time);
+    }
+    public GameManager GetGameManager() => _gameManager;
 }
