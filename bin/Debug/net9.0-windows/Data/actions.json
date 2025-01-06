@@ -1,69 +1,69 @@
 [
   {
-    "id": 1,
+    "Id": 1,
     "Name": "Rozpoczęcie recyklingu w miejskich firmach",
     "Costs": [0, 0, 250, 0],
     "Revenues": [0, 0, 100, 0,-5,0,0,0,0],
     "Description": "Wprowadzenie systemu recyklingu w lokalnych przedsiębiorstwach."
   },
   {
-    "id": 2,
+    "Id": 2,
     "Name": "Rozwój zielonej energii",
     "Costs": [500, 0, 300, 0],
     "Revenues": [0, 0, 175, 0,0,-20,0,0,0],
     "Description": "Budowa farmy wiatrowej na obrzeżach miasta."
   },
   {
-    "id": 3,
+    "Id": 3,
     "Name": "Dotacja na edukację środowiskową",
     "Costs": [400, 0, 0, 0],
     "Revenues": [0, 0, 0, 25,5,0,0,0,0],
     "Description": "Sfinansowanie programów edukacyjnych w szkołach."
   },
   {
-    "id": 4,
+    "Id": 4,
     "Name": "Wsparcie lokalnych innowacji",
     "Costs": [750, 0, 0, 0],
     "Revenues": [0, 0, -10, 40,15,0,0,0,0],
     "Description": "Stworzenie funduszu dla start-upów ekologicznych."
   },
   {
-    "id": 5,
+    "Id": 5,
     "Name": "Rozbudowa centrów recyklingu",
     "Costs": [500, 25, 100, 0],
     "Revenues": [0, 0, 100, 0,0,-15,-15,-5,0],
     "Description": "Modernizacja istniejących zakładów przetwarzania odpadów."
   },
   {
-    "id": 6,
+    "Id": 6,
     "Name": "Sadzenie miejskich lasów",
     "Costs": [0, 100, 250, 0],
     "Revenues": [0, 0, 0, 0,10,-20,0,0,25],
     "Description": "Nasadzenie drzew w parkach miejskich."
   },
   {
-    "id": 7,
+    "Id": 7,
     "Name": "Oczyszczanie rzeki",
     "Costs": [300, 200, 0, 0],
     "Revenues": [0, 0, 0, 0,-5,-25,0,-10,0],
     "Description": "Usunięcie toksycznych odpadów z lokalnych zbiorników wodnych."
   },
   {
-    "id": 8,
+    "Id": 8,
     "Name": "Budowa stacji monitorowania powietrza",
     "Costs": [200, 0, 100, 0],
     "Revenues": [0, 0, 0, 15,0,0,-15,0,0],
     "Description": "Instalacja czujników jakości powietrza w całym mieście."
   },
   {
-    "id": 9,
+    "Id": 9,
     "Name": "Budowa stacji monitorowania powietrza",
     "Costs": [200, 0, 100, 0],
     "Revenues": [0, 0, 0, 15,0,0,-20,0,0],
     "Description": "Instalacja czujników jakości powietrza w całym mieście."
   },
   {
-    "id": 10,
+    "Id": 10,
     "Name": "Modernizacja transportu publicznego",
     "Costs": [500, 0, 0, 0],
     "Revenues": [0, 0, 0, 15,0,0,-15,0,0],
@@ -71,7 +71,7 @@
   },
 
   {
-    "id": 11,
+    "Id": 11,
     "Name": "Zakaz używania plastikowych torebek",
     "Costs": [0, 100, 0, 0],
     "Revenues": [0, 0, 0, 0,-10,0,-15,0,0],
@@ -79,98 +79,98 @@
   },
 
   {
-    "id": 12,
+    "Id": 12,
     "Name": "Budowa elektrowni słonecznej",
     "Costs": [600, 150, 50, 0],
     "Revenues": [0, 0, 50, 0,0,0,0,-25,0],
     "Description": " Instalacja paneli słonecznych na obrzeżach miasta."
   },
   {
-    "id": 13,
+    "Id": 13,
     "Name": "Rozwój centrów naukowych",
     "Costs": [400, 100, 0, 0],
     "Revenues": [0, 0, -100, 50,0,0,0,0,0],
     "Description": "Budowa nowoczesnych laboratoriów badawczych."
   },
   {
-    "id": 14,
+    "Id": 14,
     "Name": "Budowa zapory wodnej",
     "Costs": [1000, 100, 300, 0],
     "Revenues": [0, 0, 100, 0,0,0,0,0,25],
     "Description": "Uregulowanie rzeki i budowa elektrowni wodnej."
   },
   {
-    "id": 15,
+    "Id": 15,
     "Name": "Zwiększenie wydajności fabryk",
     "Costs": [500, 100, 0, 0],
     "Revenues": [0, 0, 50, 0,10,0,0,0,0],
     "Description": " Modernizacja urządzeń w lokalnych zakładach przemysłowych."
   },
   {
-    "id": 16,
+    "Id": 16,
     "Name": "Eksploatacja terenów leśnych",
     "Costs": [0, 100, 0, 0],
     "Revenues": [0, 0, 75, 0,10,0,0,0,-30],
     "Description": " Modernizacja urządzeń w lokalnych zakładach przemysłowych."
   },
   {
-    "id": 17,
+    "Id": 17,
     "Name": "Intensyfikacja rolnictwa",
     "Costs": [200, 100, 0, 0],
     "Revenues": [30, 0, 75, 0,15,0,10,0,0],
     "Description": "Wprowadzenie zaawansowanych technologii uprawy."
   },
   {
-    "id": 18,
+    "Id": 18,
     "Name": "Podatek od emisji CO2",
     "Costs": [0, 100, 0, 0],
     "Revenues": [100, 0, 0, 0,-15,0,0,0,0],
     "Description": "Wprowadzenie opłat za zanieczyszczanie środowiska."
   },
   {
-    "id": 19,
+    "Id": 19,
     "Name": "Budowa przemysłowych oczyszczalni ścieków",
     "Costs": [400, 100, 0, 0],
     "Revenues": [-50, 0, 0, 0,0,0,-20,0,0],
     "Description": "WUtylizacja ścieków z dużych zakładów przemysłowych."
   },
   {
-    "id": 20,
+    "Id": 20,
     "Name": "Rozbudowa miejskich spalarni odpadów",
     "Costs": [300, 0, 0, 0],
     "Revenues": [0, 0, 50, 0,0,10,0,0,0],
     "Description": "Utylizacja odpadów w nowoczesnych spalarniach."
   },
   {
-    "id": 21,
+    "Id": 21,
     "Name": "Zakup pojazdów elektrycznych dla służb miejskich",
     "Costs": [400,110, 0, 0],
     "Revenues": [0, 0, 0, 0,0,-20,0,0,0],
     "Description": "Zakup pojazdów elektrycznych dla służb miejskich."
   },
   {
-    "id": 22,
+    "Id": 22,
     "Name": "Zamiana węglowych elektrowni na gazowe",
     "Costs": [500, 0,300, 25],
     "Revenues": [0, 0, 0, 0,0,-25,5,0,0],
     "Description": "Modernizacja elektrowni w celu zmniejszenia emisji CO2."
   },
   {
-    "id": 23,
+    "Id": 23,
     "Name": "Zakup technologii oczyszczania wody dla przemysłu",
     "Costs": [300, 0, 0, 75],
     "Revenues": [0, 0, 50, 0,0,10,0,0,0],
     "Description": "Subwencje dla firm na wdrożenie oczyszczania wody."
   },
   {
-    "id": 24,
+    "Id": 24,
     "Name": "Zielone dachy na budynkach publicznych",
     "Costs": [300, 0, 200, 0],
     "Revenues": [0, 0, 0, 0,0,0,0,-15,0],
     "Description": "Pokrywanie dachów roślinnością w celu obniżenia temperatury."
   },
   {
-    "id": 25,
+    "Id": 25,
     "Name": "Zakaz wycinki lasów pierwotnych",
     "Costs": [0, 250, 0, 0],
     "Revenues": [0, 0, 0, 0,0,0,0,0,25],
@@ -178,7 +178,7 @@
   },
 
   {
-    "id": 26,
+    "Id": 26,
     "Name": "Dotacje dla lokalnych biznesów ekologicznych",
     "Costs": [350, 50, 0, 0],
     "Revenues": [0, 0, 0, 0,15,0,0,0,0],
@@ -186,7 +186,7 @@
   },
 
   {
-    "id": 27,
+    "Id": 27,
     "Name": "Modernizacja miejskiego parku",
     "Costs": [550, 50, 150, 0],
     "Revenues": [0, 0, 0, 0,15,-10,0,0,20],
@@ -194,21 +194,21 @@
   },
 
   {
-    "id": 28,
+    "Id": 28,
     "Name": "Zmiana oświetlenia miejskiego na LED",
     "Costs": [250, 75, 250, 0],
     "Revenues": [0, 0, 0, 0,0,-10,0,-15,0],
     "Description": "Wymiana lamp ulicznych na energooszczędne."
   },
   {
-    "id": 29,
+    "Id": 29,
     "Name": "Zakładanie miejskich ogrodów botanicznych",
     "Costs": [300, 75, 200, 0],
     "Revenues": [0, 0, 0, 0,0,-15,0,0,20],
     "Description": "Tworzenie przestrzeni, gdzie gatunki roślin są chronione i pielęgnowane."
   },
   {
-    "id": 30,
+    "Id": 30,
     "Name": "Program wolontariacki",
     "Costs": [0, 0, 0, 50],
     "Revenues": [0, 100, 0, 0,0,0,0,0,0],
