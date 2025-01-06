@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JPWP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9eaac77216640342e819bd0068ae40c102f38ec8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40f5894dbeed29d9f19c90d6ca29f22b51a5469d")]
 [assembly: System.Reflection.AssemblyProductAttribute("JPWP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JPWP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,6 +5,7 @@ using System.IO;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Threading;
+using JPWP.Scripts;
 using Action = JPWP.Scripts.Action;
 
 namespace JPWP;
@@ -16,6 +17,7 @@ public partial class App : Application
 {
     public List<Level>? Levels;
     public List<Action>? AllActions;
+    public List<Event>? AllEvents;
     private readonly MainWindow _mainWindow;
     private GameManager _gameManager;
 
@@ -37,6 +39,7 @@ public partial class App : Application
     {
         LoadLevels();
         LoadAction();
+        LoadEvents();
         _gameManager = new GameManager(this);
         
         _mainWindow .Show();
@@ -71,6 +74,20 @@ public partial class App : Application
         {
             string jsonContent = File.ReadAllText(dataPath);
             AllActions = JsonSerializer.Deserialize<List<Action>>(jsonContent);
+        }
+        else
+        {
+            Console.WriteLine("Plik JSON nie został znaleziony.");
+        }
+    }
+    private void LoadEvents()
+    {
+        AllEvents = new List<Event>();
+        string dataPath = "Data/Events.json";
+        if (File.Exists(dataPath))
+        {
+            string jsonContent = File.ReadAllText(dataPath);
+            AllEvents = JsonSerializer.Deserialize<List<Event>>(jsonContent);
         }
         else
         {
@@ -138,6 +155,16 @@ public partial class App : Application
         return actions;
     }
 
+    public List<Event> AssignEvents()
+    {
+        List<Event>? events = new List<Event>();
+        Debug.Assert(AllEvents != null, nameof(AllEvents) + " != null");
+        foreach (var eventOjbect in AllEvents) 
+        {
+            events.Add(eventOjbect);
+        }
+        return events;
+    }
     public void RefreshUiAction(List<Action> actions)
     {
         _mainWindow.CreateActions(actions);
@@ -148,9 +175,9 @@ public partial class App : Application
         _mainWindow.EnableGameWinScreen(time);
     }
 
-    public void GenerateEvent(int x, int y)
+    public void GenerateEvent(int x, int y,Event gameEvent)
     {
-        _mainWindow.CreateEventIcon(x,y);
+        _mainWindow.CreateEventIcon(x,y,gameEvent);
     }
     public GameManager GetGameManager() => _gameManager;
 }

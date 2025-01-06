@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Windows.Threading;
+using JPWP.Scripts;
 using Action = JPWP.Scripts.Action;
 
 namespace JPWP;
@@ -17,6 +18,7 @@ public class GameManager(App mainApp)
     private int[]? _currentIncome;
 
     private List<Action>? _availableActions;
+    private List<Event>? _availableEvents;
     private void InitTimer()
     {
         _timeLeft = mainApp.Levels![_currentLevel].Time;
@@ -133,6 +135,10 @@ public class GameManager(App mainApp)
     {
         _availableActions = mainApp.AssignActions(mainApp.Levels![_currentLevel].Actions ?? throw new InvalidOperationException());
     }
+    private void InitEvents()
+    {
+        _availableEvents = mainApp.AssignEvents();
+    }
     private void CheckParameters()
     {
         Debug.Assert(_currentParameters != null, nameof(_currentParameters) + " != null");
@@ -163,8 +169,11 @@ public class GameManager(App mainApp)
         Random random = new Random();
         Debug.Assert(mainApp.Levels != null, "mainApp.Levels != null");
         int randomIndex = random.Next(mainApp.Levels[_currentLevel].EventPositions.Count);
+        Debug.Assert(_availableEvents != null, nameof(_availableEvents) + " != null");
+        int randomEventIndex = random.Next(_availableEvents.Count);
         List<int> val = mainApp.Levels[_currentLevel].EventPositions[randomIndex];
-        mainApp.GenerateEvent(val[0], val[1]);
+        mainApp.GenerateEvent(val[0], val[1],_availableEvents[randomEventIndex]);
+        _availableEvents.RemoveAt(randomEventIndex);
     }
     public void StartGame(int levelId)
     {
@@ -176,7 +185,7 @@ public class GameManager(App mainApp)
         SetUpIncome();
         InitAction();
         InitTimer();
-
+        InitEvents();
         GenerateEvent();
     }
     public void ResetGame()
@@ -200,23 +209,30 @@ public class GameManager(App mainApp)
 
         Debug.Assert(_currentIncome != null, nameof(_currentIncome) + " != null");
         Debug.Assert(_currentParameters != null, nameof(_currentParameters) + " != null");
-        for (var index = 0; index < _currentIncome.Length+ _currentParameters.Length; index++)
-        {
-            if (index < _currentIncome.Length)
-            {
-                _currentIncome[index] += action.Revenues[index];
-            }
-            else
-            {
-                _currentParameters[index-_currentIncome.Length] += action.Revenues[index];
-                _currentParameters[index-_currentIncome.Length] =  Math.Max(0,_currentParameters[index-_currentIncome.Length]);
-                _currentParameters[index-_currentIncome.Length] =  Math.Min(100,_currentParameters[index-_currentIncome.Length]);
-            }
-        }
+        HandleRevenue(action.Revenues.ToList());
 
         RefreshData();
         _availableActions.Remove(action);
 
+    }
+
+    public void HandleRevenue(List<int> list)
+    {
+        for (var index = 0; index < list.Count; index++)
+        {
+            Debug.Assert(_currentIncome != null, nameof(_currentIncome) + " != null");
+            if (index < _currentIncome.Length)
+            {
+                _currentIncome[index] += list[index];
+            }
+            else
+            {
+                Debug.Assert(_currentParameters != null, nameof(_currentParameters) + " != null");
+                _currentParameters[index-_currentIncome.Length] += list[index];
+                _currentParameters[index-_currentIncome.Length] =  Math.Max(0,_currentParameters[index-_currentIncome.Length]);
+                _currentParameters[index-_currentIncome.Length] =  Math.Min(100,_currentParameters[index-_currentIncome.Length]);
+            }
+        }
     }
 
     public bool CheckIfPlayerCanBuy(Action action)

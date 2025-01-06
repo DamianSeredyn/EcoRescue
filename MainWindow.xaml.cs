@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using JPWP.Scripts;
 using Action = JPWP.Scripts.Action;
 
 
@@ -97,7 +98,7 @@ public partial class MainWindow
         EventDecisionWindow.Visibility = Visibility.Hidden;
     }
 
-    public void CreateEventIcon(int x, int y)
+    public void CreateEventIcon(int x, int y,Event gameEvent)
     {
         Canvas.Children.Clear();
         Button button = new Button
@@ -122,7 +123,7 @@ public partial class MainWindow
         
         button.Click += (sender, args) =>
         {
-            EnableEventWindow();
+            EnableEventWindow(gameEvent);
             Canvas.Children.Remove(button);
         };
 
@@ -286,88 +287,7 @@ public partial class MainWindow
                     Margin = new Thickness(5)
                 };
                 revenueStackPanel.Children.Add(effectLabel);
-
-                for (int i = 0; i < action.Revenues.Length; i++)
-                {
-                    if(action.Revenues[i] == 0) continue;
-                    var revenuePanel = new StackPanel
-                    {
-                        Orientation = Orientation.Horizontal,
-                        Margin = new Thickness(5)
-                    };
-                    var imgSrc = "Resources/";
-                    switch(i)
-                    {
-                        case 0:
-                            imgSrc += "money.png";
-                            break;
-                        case 1:
-                            imgSrc += "workers.png";
-                            break;
-                        case 2:
-                            imgSrc += "Materials.png";
-                            break;
-                        case 3:
-                            imgSrc += "research.png";
-                            break;
-                        case 4:
-                            imgSrc += "Happiness.png";
-                            break;    
-                        case 5:
-                            imgSrc += "airPollution.png";
-                            break;   
-                        case 6:
-                            imgSrc += "WaterPollution.png";
-                            break;   
-                        case 7:
-                            imgSrc += "temperature.png";
-                            break;   
-                        case 8:
-                            imgSrc += "biodiversity.png";
-                            break;   
-                    }
-                    var image = new Image
-                    {
-                        Source = new BitmapImage(new Uri(imgSrc, UriKind.Relative)),
-                        Width = 32,
-                        Height = 32
-                    };
-
-                    var revenueText = new TextBlock
-                    {
-                        Text = action.Revenues[i].ToString(),
-                       
-                        VerticalAlignment = VerticalAlignment.Center,
-                        Margin = new Thickness(5, 0, 0, 0)
-                    };
-                    if (i is < 4 or 4 or 8 )
-                    {
-                        if (action.Revenues[i] >= 0)
-                        {
-                            revenueText.Text = "+" + revenueText.Text;
-                            revenueText.Foreground = Brushes.Green;
-                        }
-                        else
-                        {
-                            revenueText.Foreground = Brushes.Red;
-                        } 
-                    }
-                    else
-                    {
-                        if (action.Revenues[i] >= 0)
-                        {
-                            revenueText.Text = "+" + revenueText.Text;
-                            revenueText.Foreground = Brushes.Red;
-                        }
-                        else
-                        {
-                            revenueText.Foreground = Brushes.Green;
-                        } 
-                    }
-                    revenuePanel.Children.Add(image);
-                    revenuePanel.Children.Add(revenueText);
-                    revenueStackPanel.Children.Add(revenuePanel);
-                }
+                CreateRevenueElements(action.Revenues.ToList(), revenueStackPanel);
                 
                 Grid.SetRow(revenueStackPanel, 2);
                 Grid.SetColumn(revenueStackPanel, 0);
@@ -428,11 +348,118 @@ public partial class MainWindow
         
     }
 
-    private void EnableEventWindow()
+    private void EnableEventWindow(Event gameEvent)
     {
         DisableAllGameWindows();
+        EventTitle.Text = gameEvent.Title;
+        EventDesc.Text = gameEvent.Description;
+        
         EventDecisionWindow.Visibility = Visibility.Visible;
         _mainApp.GetGameManager().SetGameState(true);
+        CreateRevenueElements(gameEvent.Effect1, Option1Parent);
+        CreateRevenueElements(gameEvent.Effect2, Option2Parent);
+        
+        EventButton1.Content = gameEvent.Effect1T;
+        EventButton2.Content = gameEvent.Effect2T;
+        EventButton1.Click += (sender, args) =>
+        {
+            _mainApp.GetGameManager().SetGameState(false);
+            _mainApp.GetGameManager().HandleRevenue(gameEvent.Effect1);
+            DisableAllGameWindows();
+        };
+        EventButton2.Click += (sender, args) =>
+        {
+            _mainApp.GetGameManager().SetGameState(false);
+            _mainApp.GetGameManager().HandleRevenue(gameEvent.Effect2);
+            DisableAllGameWindows();
+        };
+    }
+
+    private void CreateRevenueElements(List<int> val, StackPanel panel)
+    {
+        for (int i = 0; i < val.Count; i++)
+        {
+            if (val[i] == 0) continue;
+            var revenuePanel = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                Margin = new Thickness(5)
+            };
+            var imgSrc = "Resources/";
+            switch (i)
+            {
+                case 0:
+                    imgSrc += "money.png";
+                    break;
+                case 1:
+                    imgSrc += "workers.png";
+                    break;
+                case 2:
+                    imgSrc += "Materials.png";
+                    break;
+                case 3:
+                    imgSrc += "research.png";
+                    break;
+                case 4:
+                    imgSrc += "Happiness.png";
+                    break;
+                case 5:
+                    imgSrc += "airPollution.png";
+                    break;
+                case 6:
+                    imgSrc += "WaterPollution.png";
+                    break;
+                case 7:
+                    imgSrc += "temperature.png";
+                    break;
+                case 8:
+                    imgSrc += "biodiversity.png";
+                    break;
+            }
+
+            var image = new Image
+            {
+                Source = new BitmapImage(new Uri(imgSrc, UriKind.Relative)),
+                Width = 32,
+                Height = 32
+            };
+
+            var revenueText = new TextBlock
+            {
+                Text = val[i].ToString(),
+
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(5, 0, 0, 0)
+            };
+            if (i is < 4 or 4 or 8)
+            {
+                if (val[i] >= 0)
+                {
+                    revenueText.Text = "+" + revenueText.Text;
+                    revenueText.Foreground = Brushes.Green;
+                }
+                else
+                {
+                    revenueText.Foreground = Brushes.Red;
+                }
+            }
+            else
+            {
+                if (val[i] >= 0)
+                {
+                    revenueText.Text = "+" + revenueText.Text;
+                    revenueText.Foreground = Brushes.Red;
+                }
+                else
+                {
+                    revenueText.Foreground = Brushes.Green;
+                }
+            }
+
+            revenuePanel.Children.Add(image);
+            revenuePanel.Children.Add(revenueText);
+            panel.Children.Add(revenuePanel);
+        }
     }
     private void ExitToMenuEvent(object sender, RoutedEventArgs e)
     {

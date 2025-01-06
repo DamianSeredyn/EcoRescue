@@ -1,0 +1,11 @@
+[
+{
+  "Id": 1,
+  "Title": "Protesty ekologiczne",
+  "Description": "Mieszkańcy organizują protesty w związku z zanieczyszczeniem powietrza. Możesz wesprzeć ich działania, co poprawi ich szczęście, ale obciąży budżet, lub je zignorować, co obniży morale społeczności.",
+  "Effect1": [-150,0,0,0,10,0,0,0,0],
+  "Effect2": [0,0,0,0,-10,0,0,0,0],
+  "Effect1T": "Wesprzyj!",
+  "Effect2T": "Zignoruj!"
+}
+]

@@ -1,0 +1,47 @@
+[
+{
+  "Id": 1,
+  "Title": "Protesty ekologiczne",
+  "Description": "Mieszkańcy organizują protesty w związku z zanieczyszczeniem powietrza. Możesz wesprzeć ich działania, co poprawi ich szczęście, ale obciąży budżet, lub je zignorować, co obniży morale społeczności.",
+  "Effect1": [-75,0,0,0,10,0,0,0,0],
+  "Effect2": [0,0,0,0,-10,0,0,0,0],
+  "Effect1T": "Wesprzyj!",
+  "Effect2T": "Zignoruj!"
+},
+  {
+    "Id": 2,
+    "Title": "Wyciek chemiczny",
+    "Description": "Doszło do wycieku chemikaliów w zakładzie przemysłowym. Możesz sfinansować natychmiastowe działania ratunkowe, co zmniejszy zanieczyszczenie wody, ale zwiększy koszty, lub pozostawić firmę samą sobie, co pogorszy sytuację środowiskową.",
+    "Effect1": [-100,0,0,0,0,0,-15,0,0],
+    "Effect2": [0,0,0,0,0,0,10,0,0],
+    "Effect1T": "Wesprzyj!",
+    "Effect2T": "Zignoruj!"
+  },
+  {
+    "Id": 3,
+    "Title": "Epidemia chorób układu oddechowego",
+    "Description": "Rosnące zanieczyszczenie powietrza prowadzi do wzrostu zachorowań. Możesz przeznaczyć środki na poprawę jakości powietrza, co zwiększy szczęście, lub zainwestować w szpitale, aby leczyć skutki.",
+    "Effect1": [-200,0,-50,0,0,-20,0,0,0],
+    "Effect2": [-150,0,0,0,10,0,0,0,0],
+    "Effect1T": "popraw jakość powietrza",
+    "Effect2T": "Inwestycja w szpitale"
+  },
+  {
+    "Id": 4,
+    "Title": "Ekspansja przemysłowa",
+    "Description": "Lokalne firmy chcą zwiększyć produkcję. Możesz pozwolić im działać, co zwiększy przychody pieniędzy, ale pogorszy środowisko, lub wprowadzić nowe regulacje, co spowolni rozwój, ale zmniejszy zanieczyszczenia.",
+    "Effect1": [200,0,0,0,0,10,0,0,0],
+    "Effect2": [0,-25,0,0,0,-10,0,0,0],
+    "Effect1T": "Zezwól!",
+    "Effect2T": "Zwieksz regulacje!"
+  },
+  {
+    "Id": 5,
+    "Title": "Protesty ekologiczne",
+    "Description": "Mieszkańcy organizują protesty w związku z zanieczyszczeniem powietrza. Możesz wesprzeć ich działania, co poprawi ich szczęście, ale obciąży budżet, lub je zignorować, co obniży morale społeczności.",
+    "Effect1": [-150,0,0,0,10,0,0,0,0],
+    "Effect2": [0,0,0,0,-10,0,0,0,0],
+    "Effect1T": "Wesprzyj!",
+    "Effect2T": "Zignoruj!"
+  }
+]
